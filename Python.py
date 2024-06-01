@@ -1,1 +1,1 @@
-print('Murali Krishna. Kirthi')
+print("Murali Krishna")
