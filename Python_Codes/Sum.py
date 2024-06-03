@@ -1,4 +1,4 @@
-a = 5
-b = 4 
+a = int(input("Enter a number: "))
+b = int(input("Enter a number: "))
 c = a + b
 print(c)
