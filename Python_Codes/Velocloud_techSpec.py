@@ -1,7 +1,3 @@
-#PYTHON:
-
-
-
 import json
 import re
 import traceback
