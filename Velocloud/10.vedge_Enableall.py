@@ -26,22 +26,22 @@ def RetrieveData(rtn_params):
     edge_id = int(rtn_params['edge_id'])
     enterprise_id = int(rtn_params['enterprise_id'])
     device_name = rtn_params['name']
-    raise NameError(device_name)
+    #raise NameError(device_name)
     #write error code BuildParameters
     if not (edge_id and enterprise_id):
         return {'error' : 'params not correct', 'rtn_params':rtn_params}
     time_end = datetime.datetime.now()
-    time_start = time_end-datetime.timedelta(days=1)
+    time_start = time_end-datetime.timedelta(minutes = 15)
     js_end = int(datetime.datetime.timestamp(time_end)*1000)
     js_start = int(datetime.datetime.timestamp(time_start)*1000)
-
-    url = '/portal/rest/edge/getEdgeSDWANPeers'
-    
+    url = '/portal/rest/enterprise/getEnterpriseCapabilities'
     body = {'edgeId':edge_id, 'enterpriseId' :enterprise_id, 'interval':{"end":js_end,"start":js_start}}
     rtn_params['url'] = url
     rtn_params['body'] = body
     data = json.loads(getData(rtn_params))
+    #data = getData(rtn_params)
     #raise NameError(getData(rtn_params))
     return json.dumps(data,indent =4)
+    return data
     
     

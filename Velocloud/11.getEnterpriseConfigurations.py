@@ -23,12 +23,9 @@ def RetrieveData(rtn_params):
     dev_name = rtn_params['name']
     if not (edge_id and enterprise_id):
         return {'error:':'params not correct', 'rtn_params':rtn_params}
-    #edge_url = '/portal/rest/edge/getEdgeConfigurationModules'
-    
-    edge_url = '/portal/rest/edge/getEdge'
-    
-    #edge_url = '/portal/rest /enterprise/getEnterpriseConfigurations'
-    
+
+    edge_url = '/portal/rest/enterprise/getEnterpriseConfigurations'
+
     body = {
         "enterpriseId": enterprise_id,
         "edgeId": edge_id,

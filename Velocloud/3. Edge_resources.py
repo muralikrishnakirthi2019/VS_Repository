@@ -25,9 +25,10 @@ def RetrieveData(rtn_params):
         return {'error:':'params not correct', 'rtn_params':rtn_params}
     #edge_url = '/portal/rest/edge/getEdgeConfigurationModules'
     
-    edge_url = '/portal/rest/edge/getEdge'
+    #edge_url = '/portal/rest/metrics/getEdgeStatusSeries'
     
-    #edge_url = '/portal/rest /enterprise/getEnterpriseConfigurations'
+    edge_url = '/portal/rest/metrics/getEdgeStatusMetrics'
+    
     
     body = {
         "enterpriseId": enterprise_id,
