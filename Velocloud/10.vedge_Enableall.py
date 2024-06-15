@@ -45,3 +45,32 @@ def RetrieveData(rtn_params):
     return data
     
     
+
+    
+################################################################################################
+##########################    Expected Output on vedges   ##############################################
+################################################################################################
+
+
+    {
+    "enableFwLogs": true,
+    "enableStatefulFirewall": true,
+    "enableServiceRateLimiting": false,
+    "enableCosMapping": false,
+    "enableSegmentation": true,
+    "enableNetworks": false,
+    "enableEnterpriseAuth": false,
+    "enablePremium": true,
+    "enableRoleCustomization": false,
+    "edgeVnfs.enable": true,
+    "edgeVnfs.securityVnf.paloAlto": true,
+    "edgeVnfs.securityVnf.checkPoint": true,
+    "edgeVnfs.securityVnf.fortinet": true,
+    "edgeVnfs.securityVnf.centOS": false,
+    "enableSecureEdgeAccess": false,
+    "enableInProductContextualHelpPanel": true,
+    "enableCustomizableQOE": false,
+    "enableRouteBacktracking": false,
+    "advancedATP": false
+}
+

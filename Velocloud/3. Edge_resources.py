@@ -39,3 +39,49 @@ def RetrieveData(rtn_params):
     rtn_params['body'] = body
     data = json.loads(getData(rtn_params))
     return json.dumps(data,indent = 4)
+
+
+
+################################################################################################
+##########################    Expected Output on vedges   ##############################################
+################################################################################################
+
+
+{
+    "total": 94,
+    "tunnelCount": {
+        "min": 3,
+        "max": 4,
+        "average": 3.478723404255319
+    },
+    "memoryPct": {
+        "min": 29,
+        "max": 29,
+        "average": 29
+    },
+    "flowCount": {
+        "min": 9,
+        "max": 18,
+        "average": 11.787234042553191
+    },
+    "cpuPct": {
+        "min": 8,
+        "max": 8,
+        "average": 8
+    },
+    "cpuCoreTemp": {
+        "min": 0,
+        "max": 0,
+        "average": 0
+    },
+    "handoffQueueDrops": {
+        "min": 0,
+        "max": 0,
+        "average": 0
+    },
+    "tunnelCountV6": {
+        "min": 0,
+        "max": 0,
+        "average": 0
+    }
+}
