@@ -1,1 +1,0 @@
-print("Kirthi. Murali Krishna")
