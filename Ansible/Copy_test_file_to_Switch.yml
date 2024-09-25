@@ -1,0 +1,67 @@
+    #################PLAYBOOK############################
+
+
+- name: UPGRADE ROUTER FIRMWARE
+  hosts: ungrouped
+  gather_facts: no
+
+  tasks:
+    - name: Copy IOS Image to Router
+      cli_command:
+        command: 'copy scp: bootflash:'
+        check_all: True
+        prompt:
+          - 'Address or name of remote host'
+          - 'source username'
+          - 'Source filename'
+          - 'Destination filename'
+          - 'password'
+        answer:
+          - '{{ source_host }}'
+          - '{{ source_username }}'
+          - '{{ source_filename }}'
+          - '{{ destination_filename }}'
+          - '{{ source_password }}'
+      vars:
+        ansible_command_timeout: 1200  # Time in seconds Ansible will wait depending on image size
+
+  vars:
+    source_host: '172.16.10.52'  # SCP Server Address – Change as required
+    source_username: 'root'
+    source_filename: 'murali.txt'  # IOS Image name – Change as required
+    destination_filename: 'murali.txt'  # IOS Image name – Change as required
+    source_password: 'Netbrain1'
+
+
+
+
+    #################INVENTORY############################
+---
+global_variables:
+  # enter global variables here, which apply to all hosts...
+  # all variable values here should be constants (NetBrain Intellisense Variables are not supported)
+  # sample:
+  ansible_connection: network_cli
+
+host_groups:
+  - name: ungrouped  # ansible default host group "ungrouped", for all hosts that are not in any other host groups
+    group_variables:
+      # enter group variables here...
+      # all variable values here should be constants (NetBrain Intellisense Variables are not supported)
+      # sample:
+      ansible_network_os: ios
+      # ansible_become: yes
+      # ansible_become_method: enable
+    host_variables:
+      # loop through each device in this host group
+      # variable values here can reference to the host's properties or interfaces
+      # use $ to trigger NetBrain Intellisense Variables
+      # sample:
+      ansible_ssh_user: $credential.username
+      ansible_ssh_pass: $credential.password
+      # vendor: $device.vendor
+      # visible_intf: $interface._visible
+      # mgmt_intf: $device.management_interface
+
+
+
